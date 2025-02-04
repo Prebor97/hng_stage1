@@ -22,7 +22,7 @@ public class MathController {
         try {
             number = Integer.parseInt(num);
         } catch (NumberFormatException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse("alphabet", true));
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(num, true));
         }
         return new ResponseEntity<>(mathService.mathResponse(number), HttpStatus.OK);
     }
