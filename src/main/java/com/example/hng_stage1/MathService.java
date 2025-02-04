@@ -15,12 +15,7 @@ public class MathService {
     RestTemplate restTemplate;
 
     public MathModel mathResponse(int number){
-        boolean is_prime = isPrime(number);
-        boolean is_perfect = isPerfect(number);
-        List<String> properties = propertiesList(number);
-        int digit_sum = digitSum(number);
-        String fun_fact = getFunFact(number);
-        return new MathModel(number,is_prime,is_perfect,properties,digit_sum,fun_fact);
+        return new MathModel(number,isPrime(number),isPerfect(number),propertiesList(number),digitSum(number),getFunFact(number));
     }
 
     public boolean isPrime(int number){
